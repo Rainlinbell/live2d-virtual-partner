@@ -1,0 +1,17 @@
+node_modules/
+out/
+dist/
+build/*.ico
+*.local
+*.log
+.DS_Store
+
+# 本地临时缓存（npm / electron 调试期间产生）
+.npm-cache/
+.localappdata/
+.electron-cache/
+.vitest-tmp/
+
+# 个人工作日志 / IDE 本地数据
+.workbuddy/
+.trae/

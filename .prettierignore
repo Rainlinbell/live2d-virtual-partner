@@ -1,0 +1,6 @@
+out/
+dist/
+node_modules/
+.vitest-tmp/
+build/
+package-lock.json

@@ -1,0 +1,255 @@
+/* 三个窗口共用的基础控件样式，避免每个面板重复写 scoped 样式 */
+
+:root {
+  --brand: #6495ed;
+  --brand-soft: #eef3fe;
+  --text: #333;
+  --muted: #8a8f99;
+  --line: #e6e8ec;
+  --danger: #d03050;
+  --ok: #2e9e6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    'Microsoft YaHei',
+    sans-serif;
+  color: var(--text);
+}
+
+/* ---------- 标题与分区 ---------- */
+
+.panel-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.panel-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 22px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- 表单 ---------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.field-row > .field {
+  flex: 1;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border: 1px solid #dcdfe6;
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--brand);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 72px;
+  line-height: 1.6;
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ---------- 按钮 ---------- */
+
+.btn {
+  border: 1px solid #dcdfe6;
+  background: #fff;
+  color: #555;
+  border-radius: 7px;
+  padding: 7px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #4a7fe0;
+  color: #fff;
+}
+
+.btn.danger {
+  color: var(--danger);
+  border-color: #f0c0cc;
+}
+
+.btn.ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.btn.ghost:hover:not(:disabled) {
+  color: var(--brand);
+}
+
+/* ---------- 状态与卡片 ---------- */
+
+.ok {
+  color: var(--ok);
+  font-size: 12px;
+}
+
+.err {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.row.between {
+  justify-content: space-between;
+}
+
+.row.wrap {
+  flex-wrap: wrap;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* 分段控件 */
+.seg {
+  display: inline-flex;
+  border: 1px solid #dcdfe6;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.seg button {
+  border: none;
+  background: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+}
+
+.seg button + button {
+  border-left: 1px solid #dcdfe6;
+}
+
+.seg button.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* 开关 */
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+
+/* 列表 */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

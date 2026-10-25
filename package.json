@@ -1,0 +1,52 @@
+{
+  "name": "live2d-virtual-partner",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Live2D virtual companion desktop pet",
+  "author": "Live2D Virtual Partner",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron .",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
+    "typecheck:web": "vue-tsc -p tsconfig.web.json --noEmit",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{ts,vue,js}\" \"tests/**/*.ts\"",
+    "smoke": "node scripts/smoke.mjs",
+    "dist": "electron-vite build && electron-builder",
+    "dist:dir": "electron-vite build && electron-builder --dir"
+  },
+  "dependencies": {
+    "@pixi/unsafe-eval": "^7.4.3",
+    "adm-zip": "^0.5.16",
+    "pinia": "^2.2.6",
+    "pixi-live2d-display-lipsyncpatch": "0.5.0-ls-8",
+    "pixi.js": "^7.4.2",
+    "vue": "^3.5.13",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^24.19.2",
+    "@types/ws": "^8.18.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^44.9.3",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.72.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.9",
+    "vue-tsc": "^2.2.12"
+  }
+}
